@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
+using namespace std;
 
 void main() {
-	std::cout << "Hello world!";
+	setlocale(LC_ALL, "Russian");
 }
