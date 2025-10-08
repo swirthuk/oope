@@ -3,14 +3,24 @@
 #include <iostream>
 using namespace std;
 
-const char* timeNames[] = { "утро", "перед обедом", "обед", "ужин", "ночь" };
+const char* timeNames[] = { "утро", "до обеда", "обед", "ужин", "ночь" };
 Medicine::Medicine(const char* n, int d) {
+	if (d < 1 || d > 365) {
+		throw range_error("Выходит за диапазон (от 1 до 365 включительно)!");
+	}
 	size_t medicines_name = strlen(n);
-	char* Name = new char[medicines_name + 1];
-	strcpy(Name, n);
+	name = new char[medicines_name + 1];
+	strcpy_s(name, medicines_name+1, n);
 	day = d;
+	for (int i = 0; i < required_reciption; i++) {
+		did_it[i] = false;
+		plan_reciption[i] = false;
+	}
 }
 
+Medicine::~Medicine() {
+	delete[] name;
+}
 char* Medicine::getName() const {
 	return name;
 }
@@ -21,10 +31,10 @@ int Medicine::getDay() const {
 
 void Medicine::print() const{
 	cout << "Наименование лекарства: " << name << endl;
-	cout << "Принял в " << day << "день." << endl;
+	cout << "Принял в " << day << " день." << endl;
 	for (int i = 0; i < required_reciption; i++) {
-		cout << timeNames[i] << ": Надо - " << (plan_reciption[i] ? "Да\t" : "Нет\t");
-		cout << "сделал - " << (did_it[i] ? "Да\t" : "Нет\t") << endl;
+		cout << timeNames[i] << ": Надо - " << (plan_reciption[i] ? "Да;\t" : "Нет;\t");
+		cout << "сделал - " << (did_it[i] ? "Да;\t" : "Нет;\t") << endl;
 	}
 }
 
@@ -33,7 +43,7 @@ bool Medicine::check_plan(TOD time) const{
 	if (index < 0 || index >= required_reciption) {
 		throw out_of_range("Индекс выходит за границы приёма!");
 	}
-	if ((plan_reciption[index] == false && did_it[index] == true) || (plan_reciption[index == true && did_it[index] == false])) {
+	if ((plan_reciption[index] == false && did_it[index] == true) || (plan_reciption[index] == true && did_it[index] == false)) {
 		return false;
 	}
 	return true;
@@ -53,7 +63,7 @@ void Medicine::set_did(TOD time, bool taken) {
 	}
 	did_it[index] = taken;
 }
-string Medicine::need_to_take(TOD time) {
+char* Medicine::need_to_take(TOD time) {
 	int index = static_cast<int>(time);
 	if (index < 0 || index >= required_reciption) {
 		throw out_of_range("Неверное время приема!");
@@ -65,5 +75,5 @@ bool Medicine::is_correct(TOD time) const{
 	if (index < 0 || index >= required_reciption) {
 		throw out_of_range("Неверное время приема!");
 	}
-	cout << (plan_reciption[index] == did_it[index] ? "Принял!" : "Не принял!") << endl;
+	cout << "Принял ли " << timeNames[index] << " - " << (plan_reciption[index] == did_it[index] ? "Принял!" : "Не принял!") << endl;
 }
