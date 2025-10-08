@@ -1,4 +1,4 @@
-﻿  medicine.cpp
-C:\Users\TEMP.EMIS.076\Desktop\swirth\oope\lab_work\lab_work\medicine.cpp(72,1): warning C4715: Medicine::need_to_take: значение возвращается не при всех путях выполнения
-C:\Users\TEMP.EMIS.076\Desktop\swirth\oope\lab_work\lab_work\medicine.cpp(79,1): warning C4715: Medicine::is_correct: значение возвращается не при всех путях выполнения
+﻿  main.cpp
+  medicine.cpp
+  Создание кода...
   lab_work.vcxproj -> C:\Users\TEMP.EMIS.076\Desktop\swirth\oope\lab_work\x64\Debug\lab_work.exe

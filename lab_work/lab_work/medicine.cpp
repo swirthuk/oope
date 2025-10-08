@@ -3,25 +3,31 @@
 #include <iostream>
 using namespace std;
 
-const char* timeNames[] = { "утро", "до обеда", "обед", "ужин", "ночь" };
-Medicine::Medicine(const char* n, int d) {
-	if (d < 1 || d > 365) {
+ const char* const Medicine::timeNames[] = { "утро", "до обеда", "обед", "ужин", "ночь" };
+
+Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
+
+	// TODO n - nullptr, strlen(n), -> требования к имени (!)
+	if (startDay < 1 || startDay > 365) {
 		throw range_error("Выходит за диапазон (от 1 до 365 включительно)!");
 	}
-	size_t medicines_name = strlen(n);
+	if (medicalName == nullptr || medicalName == 0) {
+		throw invalid_argument("Неверное значение названия лекарства!");
+	}
+	size_t medicines_name = strlen(medicalName);
 	name = new char[medicines_name + 1];
-	strcpy_s(name, medicines_name+1, n);
-	day = d;
-	for (int i = 0; i < required_reciption; i++) {
-		did_it[i] = false;
-		plan_reciption[i] = false;
+	strcpy_s(name, medicines_name + 1, medicalName);
+	day = startDay;
+	for (int i = 0; i < requiredReception; i++) {
+		didIt[i] = false;
+		planReception[i] = false;
 	}
 }
 
 Medicine::~Medicine() {
 	delete[] name;
 }
-char* Medicine::getName() const {
+const char* const Medicine::getName() const {
 	return name;
 }
 
@@ -29,51 +35,54 @@ int Medicine::getDay() const {
 	return day;
 }
 
+
 void Medicine::print() const{
 	cout << "Наименование лекарства: " << name << endl;
 	cout << "Принял в " << day << " день." << endl;
-	for (int i = 0; i < required_reciption; i++) {
-		cout << timeNames[i] << ": Надо - " << (plan_reciption[i] ? "Да;\t" : "Нет;\t");
-		cout << "сделал - " << (did_it[i] ? "Да;\t" : "Нет;\t") << endl;
+	for (int i = 0; i < requiredReception; i++) {
+		cout << timeNames[i] << ": Надо - " << (planReception[i] ? "Да;\t" : "Нет;\t");
+		cout << "сделал - " << (didIt[i] ? "Да;\t" : "Нет;\t") << endl;
 	}
 }
 
-bool Medicine::check_plan(TOD time) const{
-	int index = static_cast<int>(time); //преобразует enum в целое число
-	if (index < 0 || index >= required_reciption) {
+bool Medicine::checkPlan(TOD time) const{
+	int index = static_cast<int>(time); //change enum to integer
+	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Индекс выходит за границы приёма!");
 	}
-	if ((plan_reciption[index] == false && did_it[index] == true) || (plan_reciption[index] == true && did_it[index] == false)) {
+	if ((!planReception[index] && didIt[index] ) || (planReception[index]  && !didIt[index] )) {
 		return false;
 	}
 	return true;
 }
-void Medicine::set_plan(TOD time, bool shouldTake) {
+void Medicine::setPlan(TOD time, bool shouldTake) {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= required_reciption) {
+	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Неверное время приема!");
 	}
-	plan_reciption[index] = shouldTake;
+	planReception[index] = shouldTake;
 }
 
-void Medicine::set_did(TOD time, bool taken) {
+void Medicine::setDid(TOD time, bool taken) {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= required_reciption) {
+	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Неверное время приема!");
 	}
-	did_it[index] = taken;
+	didIt[index] = taken;
 }
-char* Medicine::need_to_take(TOD time) {
+bool Medicine::needToTake(TOD time) {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= required_reciption) {
+	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Неверное время приема!");
 	}
-	cout << (plan_reciption[index] ? "Стоит принять!" : "Не надо принимать!") << endl;
+
+	return planReception[index];
 }
-bool Medicine::is_correct(TOD time) const{
+bool Medicine::isCorrect(TOD time) const{
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= required_reciption) {
+	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Неверное время приема!");
 	}
-	cout << "Принял ли " << timeNames[index] << " - " << (plan_reciption[index] == did_it[index] ? "Принял!" : "Не принял!") << endl;
+
+	return planReception[index];
 }

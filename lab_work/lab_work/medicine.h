@@ -1,31 +1,35 @@
 #pragma once
 
-enum TOD {
-	morning,
-	before_dinner,
-	dinner,
-	supper,
-	night
-};
+
 
 class Medicine
 {
 private:
 	char* name;
 	unsigned int day;
-	static const int required_reciption = 5;
-	bool plan_reciption[required_reciption];
-	bool did_it[required_reciption];
+	static const int requiredReception = 5;
+	bool planReception[requiredReception] = {0};
+	bool didIt[requiredReception] = {0};
+
+	static const char* const timeNames[]; // TODO имя в CONST_CASE
 public:
-	Medicine(const char* Name, int day);
+	Medicine(const char* name, int day); // TODO Name
 	~Medicine();
-	char* getName() const;
+	const char* const getName() const;
 	int getDay() const;
 
+	enum TOD {
+		morning,
+		before_dinner,
+		dinner,
+		supper,
+		night
+	};
+
 	void print() const;
-	void set_plan(TOD time, bool shouldTake);
-	void set_did(TOD time, bool taken);
-	char* need_to_take(TOD time);
-	bool check_plan(TOD time) const;
-	bool is_correct(TOD time) const;
+	void setPlan(TOD time, bool shouldTake);
+	void setDid(TOD time, bool taken);
+	bool needToTake(TOD time); // TODO return bool
+	bool checkPlan(TOD time) const;
+	bool isCorrect(TOD time) const; // TODO return bool
 };
