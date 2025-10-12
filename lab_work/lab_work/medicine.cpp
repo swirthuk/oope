@@ -11,7 +11,7 @@ Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 	if (startDay < 1 || startDay > 365) {
 		throw range_error("Выходит за диапазон (от 1 до 365 включительно)!");
 	}
-	if (medicalName == nullptr || medicalName == 0) {
+	if (medicalName == nullptr || medicalName == 0 || isdigit(medicalName[0]) || ispunct(medicalName[0])) {
 		throw invalid_argument("Неверное значение названия лекарства!");
 	}
 	size_t medicines_name = strlen(medicalName);
