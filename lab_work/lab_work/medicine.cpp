@@ -11,7 +11,7 @@ Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 	if (startDay < 1 || startDay > 365) {
 		throw range_error("Выходит за диапазон (от 1 до 365 включительно)!");
 	}
-	if (medicalName == nullptr || strlen(medicalName) == 0 || !isalpha(medicalName[0])) {
+	if (medicalName == nullptr || medicalName == 0 || isdigit(medicalName[0]) || ispunct(medicalName[0])) {
 		throw invalid_argument("Неверное значение названия лекарства!");
 	}
 	size_t medicines_name = strlen(medicalName);
@@ -23,6 +23,7 @@ Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 		planReception[i] = false;
 	}
 }
+
 Medicine::Medicine(const Medicine& info, bool copy) {
 	size_t medicines_name = strlen(info.name);
 	name = new char[medicines_name + 1];
@@ -63,7 +64,6 @@ int Medicine::getDay() const {
 	return day;
 }
 
-
 void Medicine::print() const{
 	cout << "Наименование лекарства: " << name << endl;
 	cout << "Принял в " << day << " день." << endl;
@@ -98,7 +98,7 @@ void Medicine::setDid(TOD time, bool taken) {
 	}
 	didIt[index] = taken;
 }
-bool Medicine::needToTake(TOD time) {
+bool Medicine::needToTake(TOD time) const {
 	int index = static_cast<int>(time);
 	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Неверное время приема!");

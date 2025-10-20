@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|solutionrelative:lab_work\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|solutionrelative:lab_work\\medicine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|solutionrelative:lab_work\\medicine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|solutionrelative:lab_work\\medicine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{154AB030-5A3A-475D-B311-B45732D50E95}|lab_work\\lab_work.vcxproj|solutionrelative:lab_work\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,45 +26,41 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\main.cpp",
+              "RelativeDocumentMoniker": "lab_work\\main.cpp",
+              "ToolTip": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\main.cpp",
+              "RelativeToolTip": "lab_work\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-20T14:45:04.38Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "medicine.cpp",
               "DocumentMoniker": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.cpp",
               "RelativeDocumentMoniker": "lab_work\\medicine.cpp",
               "ToolTip": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.cpp",
               "RelativeToolTip": "lab_work\\medicine.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-27T11:03:56.66Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\main.cpp",
-              "RelativeDocumentMoniker": "lab_work\\main.cpp",
-              "ToolTip": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\main.cpp",
-              "RelativeToolTip": "lab_work\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-20T14:45:04.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "medicine.h",
               "DocumentMoniker": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.h",
               "RelativeDocumentMoniker": "lab_work\\medicine.h",
               "ToolTip": "C:\\Users\\avers\\Documents\\obj.-or.-pr\\lab_work\\lab_work\\medicine.h",
               "RelativeToolTip": "lab_work\\medicine.h",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAiwBYAAAAQAAAA",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-27T10:39:46.991Z"
+              "WhenOpened": "2025-09-27T10:39:46.991Z",
+              "EditorCaption": ""
             }
           ]
         }

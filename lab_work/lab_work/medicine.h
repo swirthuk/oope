@@ -10,10 +10,11 @@ private:
 	static const int requiredReception = 5;
 	bool planReception[requiredReception] = {0};
 	bool didIt[requiredReception] = {0};
+	bool needToCopy;
 
 	static const char* const timeNames[];
 public:
-	Medicine(const char* name, int day);
+	Medicine(const char* name, int day); // TODO Name
 	Medicine(const Medicine& info, bool copy);
 	~Medicine();
 	const char* const getName() const;
@@ -30,10 +31,10 @@ public:
 	void print() const;
 	void setPlan(TOD time, bool shouldTake);
 	void setDid(TOD time, bool taken);
-	bool needToTake(TOD time); // TODO return bool
+	bool needToTake(TOD time) const; 
 	bool checkPlan(TOD time) const;
 	bool isCorrect(TOD time) const; // TODO return bool
 
-	friend std::ostream& operator<<(std::ostream& out, const Medicine& ourObject); // Не работало без friend'а и std:0
-	bool& operator[](TOD time);
+	ostream& std::operator<< (std::ostream& out, const Medicine& ourObject);
+	bool& Medicine::operator[] (TOD time);
 };
