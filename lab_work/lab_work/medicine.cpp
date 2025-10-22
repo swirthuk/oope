@@ -11,7 +11,7 @@ Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 	if (startDay < 1 || startDay > 365) {
 		throw range_error("Выходит за диапазон (от 1 до 365 включительно)!");
 	}
-	if (medicalName == nullptr || medicalName == 0 || isdigit(medicalName[0]) || ispunct(medicalName[0])) {
+	if (medicalName == nullptr || medicalName == 0 || !isalpha (medicalName[0])) {
 		throw invalid_argument("Неверное значение названия лекарства!");
 	}
 	size_t medicines_name = strlen(medicalName);
@@ -23,6 +23,8 @@ Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 		planReception[i] = false;
 	}
 }
+
+//ПЕРЕГРУЖЕННЫЙ КОНСТРУКТОР
 
 Medicine::Medicine(const Medicine& info, bool copy) {
 	size_t medicines_name = strlen(info.name);
@@ -47,15 +49,19 @@ Medicine::Medicine(const Medicine& info, bool copy) {
 Medicine::~Medicine() {
 	delete[] name;
 }
-ostream& operator << (ostream& out, const Medicine& ourObject) {
-	out << "Лекарство: " << ourObject.name
-		<< " принимать в " << ourObject.day << " день.";
+
+// ПЕРЕГРУЗКА ОПЕРАТОРОВ
+
+ostream& operator << (ostream& out, const Medicine& ourObject) { 
+	out << "Лекарство: " << ourObject.getName()
+		<< " принимать в " << ourObject.getDay() << " день.";
 	return out;
 }
 bool& Medicine::operator[] (TOD time) {
 	int index = static_cast<int>(time);
 	return planReception[index];
 }
+
 const char* const Medicine::getName() const {
 	return name;
 }
@@ -106,6 +112,15 @@ bool Medicine::needToTake(TOD time) const {
 
 	return planReception[index];
 }
+
+//ПЕРЕГРУЖЕННЫЙ МЕТОД
+
+void Medicine::needToTake() {
+	for (int i = 0; i < requiredReception; i++) {
+		didIt[i] = planReception[i];
+	}
+}
+
 bool Medicine::isCorrect(TOD time) const{
 	int index = static_cast<int>(time);
 	if (index < 0 || index >= requiredReception) {
