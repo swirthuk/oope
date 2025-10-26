@@ -46,6 +46,7 @@ Medicine::Medicine(const Medicine& info, bool copy) {
 		}
 	}
 }
+
 Medicine::~Medicine() {
 	delete[] name;
 }
@@ -115,13 +116,16 @@ bool Medicine::needToTake(TOD time) const {
 
 //ПЕРЕГРУЖЕННЫЙ МЕТОД
 
-void Medicine::needToTake() {
+bool Medicine::needToTake() {
 	for (int i = 0; i < requiredReception; i++) {
-		didIt[i] = planReception[i];
+		if (planReception[i] && !didIt[i] || !planReception[i] && didIt[i]) {
+			return false;
+		}
+		return true;
 	}
 }
 
-bool Medicine::isCorrect(TOD time) const{
+bool Medicine::isCorrect(TOD time) const {
 	int index = static_cast<int>(time);
 	if (index < 0 || index >= requiredReception) {
 		throw out_of_range("Неверное время приема!");

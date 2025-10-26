@@ -31,7 +31,7 @@ public:
 	void setPlan(TOD time, bool shouldTake);
 	void setDid(TOD time, bool taken);
 	bool needToTake(TOD time) const;
-	void needToTake();
+	bool needToTake();
 
 	bool checkPlan(TOD time) const;
 	bool isCorrect(TOD time) const;
