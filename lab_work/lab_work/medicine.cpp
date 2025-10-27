@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
- const char* const Medicine::timeNames[] = { "утро", "до обеда", "обед", "ужин", "ночь" };
+const char* const Medicine::timeNames[] = { "утро", "до обеда", "обед", "ужин", "ночь" };
 
 Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 

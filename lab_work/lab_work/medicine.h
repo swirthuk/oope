@@ -5,13 +5,13 @@
 class Medicine
 {
 private:
-	char* name;
 	unsigned int day;
 	static const int requiredReception = 5;
-	bool planReception[requiredReception] = {0};
 	bool didIt[requiredReception] = {0};
-
 	static const char* const timeNames[];
+protected:
+	char* name;
+	bool planReception[requiredReception] = { 0 };
 public:
 	Medicine(const char* name, int day);
 	Medicine(const Medicine& info, bool copy);

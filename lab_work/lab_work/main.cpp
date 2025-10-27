@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
 #include "medicine.h"
+#include "Medicines.h"
 using namespace std;
 
 int main() {
@@ -31,7 +32,10 @@ int main() {
 	med.print();
 	med.isCorrect(Medicine::morning);
 
+	med[Medicine::morning] = true;
 
+
+	cout << med << "\r";
 	system("pause");
 	return 0;
 }
