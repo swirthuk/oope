@@ -1,4 +1,177 @@
 ﻿  main.cpp
   medicine.cpp
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6): error C2039: "ostream": не является членом "std".
+  (компиляция исходного файла "medicine.cpp")
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\predefined C++ types (compiler internal)(357,11):
+       см. объявление "std"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,13): error C2143: синтаксическая ошибка: отсутствие ";" перед "&"
+  (компиляция исходного файла "medicine.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "medicine.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,32): error C2039: "ostream": не является членом "std".
+  (компиляция исходного файла "medicine.cpp")
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\predefined C++ types (compiler internal)(357,11):
+       см. объявление "std"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15): error C2473: operator <<: выглядит как определение функции, но без списка параметров.
+  (компиляция исходного файла "medicine.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "medicine.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,41): error C2065: out: необъявленный идентификатор
+  (компиляция исходного файла "medicine.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,46): error C2059: синтаксическая ошибка: const
+  (компиляция исходного файла "medicine.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,1): error C2872: ostream: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6):
+      может быть "int ostream"
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iosfwd(231,19):
+      или       "std::ostream"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,8): error C2143: синтаксическая ошибка: отсутствие ";" перед "&"
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,1): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,1): error C2086: int ostream: переопределение
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6):
+       см. объявление "ostream"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,23): error C2872: ostream: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6):
+      может быть "int ostream"
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iosfwd(231,19):
+      или       "std::ostream"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,10): error C2473: operator <<: выглядит как определение функции, но без списка параметров.
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,10): error C2374: <<: переопределение; множественная инициализация
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+       см. объявление "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,10): error C2086: int &<<: переопределение
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+       см. объявление "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,32): error C2065: out: необъявленный идентификатор
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,37): error C2059: синтаксическая ошибка: const
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,64): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(56,64): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(75,2): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(75,2):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(75,7): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(75,7):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(75,58): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(75,58):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,2): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,2):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,7): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,7):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,29): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,29):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,36): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(76,36):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(78,3): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(78,3):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(78,8): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(78,8):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(78,24): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(78,24):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(79,3): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(79,3):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(79,8): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(79,8):
+      или       "<<"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(79,29): error C2872: <<: неоднозначный символ
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15):
+      может быть "int &<<"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.cpp(79,29):
+      или       "<<"
+  
+  Medicines.cpp
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\Medicines.h(2,26): error C2504: Medicine: не определен базовый класс
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6): error C2039: "ostream": не является членом "std".
+  (компиляция исходного файла "Medicines.cpp")
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\predefined C++ types (compiler internal)(357,11):
+       см. объявление "std"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,13): error C2143: синтаксическая ошибка: отсутствие ";" перед "&"
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,6): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,32): error C2039: "ostream": не является членом "std".
+  (компиляция исходного файла "Medicines.cpp")
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\predefined C++ types (compiler internal)(357,11):
+       см. объявление "std"
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15): error C2473: operator <<: выглядит как определение функции, но без списка параметров.
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,15): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,41): error C2065: out: необъявленный идентификатор
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\medicine.h(42,46): error C2059: синтаксическая ошибка: const
+  (компиляция исходного файла "Medicines.cpp")
+  
+C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\Medicines.cpp(6,7): error C2011: Medicines: переопределение типа "class"
+      C:\Users\avers\Documents\obj.-or.-pr\lab_work\lab_work\Medicines.h(2,7):
+       см. объявление "Medicines"
+  
   Создание кода...
-  lab_work.vcxproj -> C:\Users\avers\Documents\obj.-or.-pr\lab_work\x64\Debug\lab_work.exe
