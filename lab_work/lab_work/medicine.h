@@ -7,10 +7,10 @@ class Medicine : public IMedicine
 private:
 	char* name;
 	unsigned int day;
-	static const int requiredReception = 5;
-	bool didIt[requiredReception] = {0};
+	static const int timeSlots = 5;
+	bool didIt[timeSlots] = {0};
 	static const char* const timeNames[];
-	bool planReception[requiredReception] = { 0 };
+	bool planReception[timeSlots] = { 0 };
 public:
 	Medicine(const char* name, int day);
 	Medicine(const Medicine& info, bool copy);

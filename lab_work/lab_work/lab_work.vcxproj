@@ -128,12 +128,14 @@
     <ClCompile Include="medicine.cpp" />
     <ClCompile Include="MedicineInterface.cpp" />
     <ClCompile Include="Medicines.cpp" />
+    <ClCompile Include="MedicineTemplate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IMedicine.h" />
     <ClInclude Include="medicine.h" />
     <ClInclude Include="MedicineInterface.h" />
     <ClInclude Include="Medicines.h" />
+    <ClInclude Include="MedicineTemplate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

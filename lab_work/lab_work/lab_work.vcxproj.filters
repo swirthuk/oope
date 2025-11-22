@@ -30,6 +30,9 @@
     <ClCompile Include="MedicineInterface.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="MedicineTemplate.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="medicine.h">
@@ -42,6 +45,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MedicineInterface.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MedicineTemplate.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

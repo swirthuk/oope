@@ -18,7 +18,7 @@ Medicine::Medicine(const char* medicalName, int startDay) { // TODO n и d
 	name = new char[medicines_name + 1];
 	strcpy_s(name, medicines_name + 1, medicalName);
 	day = startDay;
-	for (int i = 0; i < requiredReception; i++) {
+	for (int i = 0; i < timeSlots; i++) {
 		didIt[i] = false;
 		planReception[i] = false;
 	}
@@ -34,13 +34,13 @@ Medicine::Medicine(const Medicine& info, bool copy) {
 	day = info.day + 1;
 
 	if (copy) {
-		for (int i = 0; i < requiredReception; i++) {
+		for (int i = 0; i < timeSlots; i++) {
 			planReception[i] = info.planReception[i];
 			didIt[i] = false;
 		}
 	}
 	else {
-		for (int i = 0; i < requiredReception; i++) {
+		for (int i = 0; i < timeSlots; i++) {
 			planReception[i] = false;
 			didIt[i] = false;
 		}
@@ -74,7 +74,7 @@ int Medicine::getDay() const {
 void Medicine::print() const{
 	cout << "Наименование лекарства: " << name << endl;
 	cout << "Принял в " << day << " день." << endl;
-	for (int i = 0; i < requiredReception; i++) {
+	for (int i = 0; i < timeSlots; i++) {
 		cout << timeNames[i] << ": Надо - " << (planReception[i] ? "Да;\t" : "Нет;\t");
 		cout << "сделал - " << (didIt[i] ? "Да;\t" : "Нет;\t") << endl;
 	}
@@ -82,7 +82,7 @@ void Medicine::print() const{
 
 bool Medicine::checkPlan(TOD time) const{
 	int index = static_cast<int>(time); //change enum to integer
-	if (index < 0 || index >= requiredReception) {
+	if (index < 0 || index >= timeSlots) {
 		throw out_of_range("Индекс выходит за границы приёма!");
 	}
 	if ((!planReception[index] && didIt[index] ) || (planReception[index]  && !didIt[index] )) {
@@ -92,7 +92,7 @@ bool Medicine::checkPlan(TOD time) const{
 }
 void Medicine::setPlan(TOD time, bool shouldTake) {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= requiredReception) {
+	if (index < 0 || index >= timeSlots) {
 		throw out_of_range("Неверное время приема!");
 	}
 	planReception[index] = shouldTake;
@@ -100,14 +100,14 @@ void Medicine::setPlan(TOD time, bool shouldTake) {
 
 void Medicine::setDid(TOD time, bool taken) {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= requiredReception) {
+	if (index < 0 || index >= timeSlots) {
 		throw out_of_range("Неверное время приема!");
 	}
 	didIt[index] = taken;
 }
 bool Medicine::needToTake(TOD time) const {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= requiredReception) {
+	if (index < 0 || index >= timeSlots) {
 		throw out_of_range("Неверное время приема!");
 	}
 
@@ -117,7 +117,7 @@ bool Medicine::needToTake(TOD time) const {
 //ПЕРЕГРУЖЕННЫЙ МЕТОД
 
 bool Medicine::needToTake() {
-	for (int i = 0; i < requiredReception; i++) {
+	for (int i = 0; i < timeSlots; i++) {
 		if (planReception[i] && !didIt[i] || !planReception[i] && didIt[i]) {
 			return false;
 		}
@@ -127,7 +127,7 @@ bool Medicine::needToTake() {
 
 bool Medicine::isCorrect(TOD time) const {
 	int index = static_cast<int>(time);
-	if (index < 0 || index >= requiredReception) {
+	if (index < 0 || index >= timeSlots) {
 		throw out_of_range("Неверное время приема!");
 	}
 
