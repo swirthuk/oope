@@ -1,8 +1,8 @@
 #pragma once
+#include "IMedicine.h"
+#include <iostream>
 
-
-
-class Medicine
+class Medicine : public IMedicine
 {
 private:
 	char* name;
@@ -14,29 +14,21 @@ private:
 public:
 	Medicine(const char* name, int day);
 	Medicine(const Medicine& info, bool copy);
-	~Medicine();
-	const char* const getName() const;
-	int getDay() const;
-
-	enum TOD {
-		morning,
-		before_dinner,
-		dinner,
-		supper,
-		night
-	};
+	virtual ~Medicine();
+	const char* getName() const override;
+	int getDay() const override;
 
 	void print() const;
-	void setPlan(TOD time, bool shouldTake);
-	void setDid(TOD time, bool taken);
-	bool needToTake(TOD time) const;
-	bool needToTake();
+	void setPlan(TOD time, bool shouldTake) override;
+	void setDid(TOD time, bool taken) override;
+	bool needToTake(TOD time) const override;
+	bool needToTake() override;
 
-	bool checkPlan(TOD time) const;
-	bool isCorrect(TOD time) const;
+	bool checkPlan(TOD time) const override;
+	bool isCorrect(TOD time) const override;
 
 	
-	bool& operator[] (TOD time);
+	bool& operator[] (TOD time) override;
 };
 
 std::ostream& operator<< (std::ostream& out, const Medicine& ourObject);

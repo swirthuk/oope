@@ -123,12 +123,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IMedicine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medicine.cpp" />
+    <ClCompile Include="MedicineInterface.cpp" />
     <ClCompile Include="Medicines.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IMedicine.h" />
     <ClInclude Include="medicine.h" />
+    <ClInclude Include="MedicineInterface.h" />
     <ClInclude Include="Medicines.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -63,7 +63,7 @@ bool& Medicine::operator[] (TOD time) {
 	return planReception[index];
 }
 
-const char* const Medicine::getName() const {
+const char* Medicine::getName() const {
 	return name;
 }
 

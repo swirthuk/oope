@@ -1,29 +1,34 @@
 #include "Medicines.h"
-#include "medicine.h"
 #include <iostream>
 using namespace std;
 
-Medicines::Medicines(const char* name, int day, const char* note = nullptr) : Medicine(name, day) {
-	if (note) {
+Medicines::Medicines(const char* name, int day, const char* note ) : Medicine(name, day) {
+	if (note && strlen(note) > 0) {
 		this->note = new char[strlen(note) + 1];
-		strcpy(this->note, note);
+		strcpy_s(this->note, strlen(note) + 1, note);
 	}
 	else {
-		this->note = nullptr;
+		const char* text = "До еды, глотать.";
+		this->note = new char[strlen(text) + 1];
+		strcpy_s(this->note, strlen(text) + 1, note);
 	}
 }
 Medicines::~Medicines(){
 	delete[] note;
 }
+const char* const Medicines::getNote() const {
+	return note;
+}
 void Medicines::setNote(const char* info) {
 	delete[] note;
-	if (!info) {
-		note = nullptr;
+	note = nullptr;
+	if (info) {
+		note = new char[strlen(info) + 1];
+		strcpy_s(note, strlen(info) + 1, info);
 	}
-	note = new char[strlen(info) + 1];
-	strcpy(note, info);
+	note = nullptr;
 }
-void Medicines::printNote() const {
+void Medicines::print() const {
 	Medicine::print();
 	if (note) {
 		cout << note << endl;

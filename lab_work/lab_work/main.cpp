@@ -38,4 +38,9 @@ int main() {
 	cout << med << "\r";
 	system("pause");
 	return 0;
+	IMedicine* test[5];
+	test[0] = new Medicine("Аспирин", 1);
+	test[1] = new Medicines("Витамины", 1, "После еды");
+	test[2] = new Medicine("Анальгин", 2);
+	test[3] = new Medicines("Антибиотик", 3, "За 30 минут до еды");
 }
