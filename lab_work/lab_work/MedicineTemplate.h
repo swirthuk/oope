@@ -3,22 +3,22 @@
 #include <iostream>
 using namespace std;
 
-template <int requiredReception>
+template <int REQUIREDRECEPTION>
 class MedicineTemplate
 {
 private:
 	char* name;
 	unsigned int day;
-	bool didIt[requiredReception] = { 0 };
-	bool planReception[requiredReception] = { 0 };
+	bool didIt[REQUIREDRECEPTION] = { 0 };
+	bool planReception[REQUIREDRECEPTION] = { 0 };
 	enum TOD {
 		morning,
 		before_dinner,
 		dinner,
 		supper,
-		night
+		night,
+		tod_size
 	};
-	static const char* timeNames[requiredReception];
 public:
 	MedicineTemplate(const char* medicalName, int startDay) {
 		if (startDay < 1 || startDay > 365) {
@@ -31,7 +31,7 @@ public:
 		name = new char[medicines_name + 1];
 		strcpy_s(name, medicines_name + 1, medicalName);
 		day = startDay;
-		for (int i = 0; i < requiredReception; i++) {
+		for (int i = 0; i < REQUIREDRECEPTION; i++) {
 			didIt[i] = false;
 			planReception[i] = false;
 		}
@@ -39,7 +39,7 @@ public:
 
 	// ПЕРЕГРУЖЕННЫЙ КОНСТРУКТОР
 
-	MedicineTemplate(const Medicine& info, bool copy) {
+	MedicineTemplate(const MedicineTemplate& info, bool copy) {
 		size_t medicines_name = strlen(info.name);
 		name = new char[medicines_name + 1];
 		strcpy_s(name, medicines_name + 1, info.name);
@@ -47,13 +47,13 @@ public:
 		day = info.day + 1;
 
 		if (copy) {
-			for (int i = 0; i < requiredReception; i++) {
+			for (int i = 0; i < REQUIREDRECEPTION; i++) {
 				planReception[i] = info.planReception[i];
 				didIt[i] = false;
 			}
 		}
 		else {
-			for (int i = 0; i < requiredReception; i++) {
+			for (int i = 0; i < REQUIREDRECEPTION; i++) {
 				planReception[i] = false;
 				didIt[i] = false;
 			}
@@ -66,7 +66,7 @@ public:
 
 	// ПЕРЕГРУЖЕННЫЕ МЕТОДЫ
 
-	ostream& operator << (ostream& out, const MedicineTemplate& ourObject) {
+	friend ostream& operator << (ostream& out, const MedicineTemplate& ourObject) {
 		out << "Лекарство: " << ourObject.getName()
 			<< " принимать в " << ourObject.getDay() << " день.";
 		return out;
@@ -87,15 +87,16 @@ public:
 	void print() const {
 		cout << "Наименование лекарства: " << name << endl;
 		cout << "Принял в " << day << " день." << endl;
-		for (int i = 0; i < requiredReception; i++) {
-			cout << timeNames[i] << ": Надо - " << (planReception[i] ? "Да;\t" : "Нет;\t");
+		for (int i = 0; i < REQUIREDRECEPTION; i++) {
+			cout << "Прием в " << i+1 <<  ": Надо - " << (planReception[i] ? "Да;\t" : "Нет;\t");
 			cout << "сделал - " << (didIt[i] ? "Да;\t" : "Нет;\t") << endl;
 		}
 	}
 
 	bool checkPlan(TOD time) const {
 		int index = static_cast<int>(time); //change enum to integer
-		if (index < 0 || index >= requiredReception) {
+		if (index > 5) index %= 5;
+		if (index < 0 || index >= REQUIREDRECEPTION) {
 			throw out_of_range("Индекс выходит за границы приёма!");
 		}
 		if ((!planReception[index] && didIt[index]) || (planReception[index] && !didIt[index])) {
@@ -105,7 +106,8 @@ public:
 	}
 	void setPlan(TOD time, bool shouldTake) {
 		int index = static_cast<int>(time);
-		if (index < 0 || index >= requiredReception) {
+		if (index > 5) index %= 5;
+		if (index < 0 || index >= REQUIREDRECEPTION) {
 			throw out_of_range("Неверное время приема!");
 		}
 		planReception[index] = shouldTake;
@@ -113,14 +115,16 @@ public:
 
 	void setDid(TOD time, bool taken) {
 		int index = static_cast<int>(time);
-		if (index < 0 || index >= requiredReception) {
+		if (index > 5) index %= 5;
+		if (index < 0 || index >= REQUIREDRECEPTION) {
 			throw out_of_range("Неверное время приема!");
 		}
 		didIt[index] = taken;
 	}
 	bool needToTake(TOD time) const {
 		int index = static_cast<int>(time);
-		if (index < 0 || index >= requiredReception) {
+		if (index > 5) index %= 5;
+		if (index < 0 || index >= REQUIREDRECEPTION) {
 			throw out_of_range("Неверное время приема!");
 		}
 
@@ -130,17 +134,18 @@ public:
 	//ПЕРЕГРУЖЕННЫЙ МЕТОД
 
 	bool needToTake() {
-		for (int i = 0; i < requiredReception; i++) {
+		for (int i = 0; i < REQUIREDRECEPTION; i++) {
 			if (planReception[i] && !didIt[i] || !planReception[i] && didIt[i]) {
 				return false;
 			}
-			return true;
 		}
+		return true;
 	}
 
 	bool isCorrect(TOD time) const {
 		int index = static_cast<int>(time);
-		if (index < 0 || index >= requiredReception) {
+		if (index > 5) index %= 5;
+		if (index < 0 || index >= REQUIREDRECEPTION) {
 			throw out_of_range("Неверное время приема!");
 		}
 
