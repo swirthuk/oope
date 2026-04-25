@@ -7,6 +7,7 @@
 #include <QListWidget>
 #include <QButtonGroup>
 #include <QVBoxLayout>
+#include <QGraphicsOpacityEffect>
 
 #include "baldaboard.h"
 
@@ -36,8 +37,11 @@ private:
     QListWidget *computerWords;
 
     QButtonGroup *letterGroup;
+    QGraphicsOpacityEffect *boardOpacityEffect;
 
     void createLetterButtons(QVBoxLayout *parentLayout);
+    void applyModernStyle();
+    void animateBoardEntrance();
 };
 
-#endif // BALDAWINDOW_H
+#endif

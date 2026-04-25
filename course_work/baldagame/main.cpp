@@ -4,7 +4,6 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //For russian letters
     QTextCodec *cyrillicCodec = QTextCodec::codecForName("Windows-1251");
     QTextCodec::setCodecForLocale(cyrillicCodec);
     BaldaWindow w;

@@ -19,4 +19,4 @@ private:
     QSet<QString> usedWords;
 };
 
-#endif // BALDAWORD_H
+#endif

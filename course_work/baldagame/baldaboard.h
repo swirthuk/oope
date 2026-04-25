@@ -36,6 +36,8 @@ private:
     void placeStartWord();
     void loadDictionary();
     bool checkWord(const QString &word);
+    bool isOneEditDerivative(const QString &candidate, const QString &baseWord) const;
+    bool isArtificialDerivative(const QString &word) const;
     void computerMove();
 
 private:
@@ -57,7 +59,9 @@ private:
     QTime time;
 
     QSet<QString> dictionary;
+    QSet<QString> dictionaryPrefixes;
     QSet<QString> usedWords;
+    int maxWordLength;
 };
 
 #endif
